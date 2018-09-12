@@ -1,2 +1,2 @@
-# lil-bits
-Bare-bones React starter kit from scratch.
+# Nav Front End Dev Challenge
+This is a WIP
