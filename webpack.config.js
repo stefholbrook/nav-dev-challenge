@@ -2,9 +2,9 @@ const path = require('path')
 const webpack = require('webpack')
 
 const config = {
-  devtool: 'cheap-eval-source-map',
+  devtool: 'cheap-eval-sourcemap',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware',
     './src/index'
   ],
   output: {
@@ -18,16 +18,12 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          query: {
-            presets: ['env']
-          }
+          loader: 'babel-loader'
         }
       }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ]
 }

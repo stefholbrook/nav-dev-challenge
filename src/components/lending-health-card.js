@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import debounce from 'lodash/debounce'
 
 export const StyledCard = styled.div`
   position: relative;
@@ -47,21 +48,21 @@ class LendingHealthCard extends Component {
     super()
     this.state = { contentHeight: 0 }
 
-    // this.setHeight = this.setHeight.bind(this)
+    this.setHeight = this.setHeight.bind(this)
   }
 
-  // setRef = (name) => (ref) => {
-  //   this[name] = ref
-  // }
+  setRef = (name) => (ref) => {
+    this[name] = ref
+  }
 
-// setHeight = debounce(
-//     () => {
-//       const element = findDOMNode(this.contents)
-//       element && this.setState({ contentHeight: element.scrollHeight })
-//     },
-//     500,
-//     { trailing: true }
-//   )
+setHeight = debounce(
+    () => {
+      const element = findDOMNode(this.contents)
+      element && this.setState({ contentHeight: element.scrollHeight })
+    },
+    500,
+    { trailing: true }
+  )
 
   render () {
     const { children } = this.props
