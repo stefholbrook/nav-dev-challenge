@@ -1,10 +1,13 @@
 import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-const App = () => <h1>oooooo aaaaah</h1>
+import App from './app'
 
 render(
-  <App />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 )
