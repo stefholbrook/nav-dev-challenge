@@ -28,7 +28,8 @@ const List = styled.ul`
   list-style: none;
 `
 
-const Icon = styled.i`
+const Icon = styled.div`
+  display: inline;
   padding: 0 16px;
 `
 
@@ -71,20 +72,9 @@ export const SideNav = ({ isPremium }) => (
             isActive={isActive}
           >
             <Icon>
-              {/* <ScoreDialIcon /> */}
+              📝
             </Icon>
-            Score
-          </StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink
-            activeClassName='is-active'
-            to='/partner/financing/credit-cards'
-          >
-            <Icon>
-              {/* <CreditCardIcon /> */}
-            </Icon>
-            Credit Cards
+            Instructions
           </StyledNavLink>
         </li>
         <li>
@@ -93,9 +83,9 @@ export const SideNav = ({ isPremium }) => (
             to=''
           >
             <Icon>
-              {/* <MoneyIcon /> */}
+              🤓
             </Icon>
-            Business loans
+            Sample Lesson
           </StyledNavLink>
         </li>
       </List>

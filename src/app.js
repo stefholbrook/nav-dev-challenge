@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import LendingHealthCard from './components/lending-health-card'
 import SideNav from './components/side-nav'
 
 export const Layout = styled.div`
@@ -40,7 +41,9 @@ class App extends Component {
             <SideNav />
           </SideBar>
         </SideBarWrapper>
-        <h1>oooooo aaaaah</h1>
+        <LendingHealthCard>
+          <h1>oooooo aaaaah</h1>
+        </LendingHealthCard>
       </Layout>
     )
   }
