@@ -88,7 +88,11 @@ class LendingHealthCard extends Component {
     this[name] = ref
   }
 
-setHeight = debounce(
+  // tabClick = (target) => {
+  //   this.setState(() => ({ currentView: target }))
+  // }
+
+  setHeight = debounce(
     () => {
       const element = findDOMNode(this.contents)
       element && this.setState({ contentHeight: element.scrollHeight })
