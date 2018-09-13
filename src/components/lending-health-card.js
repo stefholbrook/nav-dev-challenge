@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import debounce from 'lodash/debounce'
 
+import ActionRequiredCard from './action-required-card'
 import StatusCard from './status-card'
 import TabMenu from './tab-menu'
 
@@ -35,9 +36,6 @@ const Grid = styled.section`
   }
   ${'' /* & > ${Requirement} {
     margin-top: 8px;
-  } */}
-  ${'' /* & > ${TabGroup} {
-    margin-bottom: 8px;
   } */}
 `
 
@@ -88,9 +86,9 @@ class LendingHealthCard extends Component {
     this[name] = ref
   }
 
-  // tabClick = (target) => {
-  //   this.setState(() => ({ currentView: target }))
-  // }
+  tabClick = (target) => {
+    this.setState(() => ({ currentView: target }))
+  }
 
   setHeight = debounce(
     () => {
@@ -110,19 +108,9 @@ class LendingHealthCard extends Component {
           <CardBody ref={this.setRef('contents')}>
             <Grid>
             <TabMenu currentView={currentView} tabClick={this.tabClick} />
-            {/* {
-              !isLoading &&
-              !isIdVerified && (
-                <ActionRequiredCard type='idVerify' />
-              )
-            } */}
-            {/* {
-              currentView === 'termLoan' && (
-                <ActionRequiredCard
-                  type='addBusiness'
-                  copy='For term loan options, add your business' />
-              )
-            } */}
+            {currentView === 'termLoan' && (
+              <ActionRequiredCard />
+            )}
             {/* {
               !isLoading &&
               !activeBusinessId &&
@@ -132,15 +120,9 @@ class LendingHealthCard extends Component {
                   copy='For line of credit options, add your business' />
               )
             } */}
-            {/* {
-              !isLoading && isIdVerified &&
-              (activeBusinessId || */}
-                {/* !['termLoan', 'lineOfCredit'].includes(currentView)) && ( */}
+            {currentView === 'creditCard' && (
                 <Fragment>
-                  <StatusCard
-                    // status={reportStatus}
-                    // statusMessage={reportStatusMessage}
-                  />
+                  <StatusCard />
                   {/* <Header size='md'>Here’s what issuers are looking for</Header> */}
                   {/* {requirements.map((requirement, index) => (
                     <Requirement
@@ -161,8 +143,8 @@ class LendingHealthCard extends Component {
                     />
                   ))} */}
                 </Fragment>
-              {/* )
-            } */}
+            )
+            }
           </Grid>
           </CardBody>
         </HeightController>

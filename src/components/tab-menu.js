@@ -29,11 +29,6 @@ export const TabMenu = ({ currentView, tabClick }) => {
         icon={`https://dxkdvuv3hanyu.cloudfront.net/design-assets/icons/pbr/loan-${currentView === 'termLoan' ? 'dark' : 'light'}.svg`}
         copy='Term loan'
         onClick={() => tabClick('termLoan')} />
-      <Tab
-        isActive={currentView === 'lineOfCredit'}
-        icon={`https://dxkdvuv3hanyu.cloudfront.net/design-assets/icons/pbr/line-of-credit-${currentView === 'lineOfCredit' ? 'dark' : 'light'}.svg`}
-        copy='Line of credit'
-        onClick={() => tabClick('lineOfCredit')} />
     </TabGroup>
   )
 }
