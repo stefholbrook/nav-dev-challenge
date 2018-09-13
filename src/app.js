@@ -42,9 +42,7 @@ class App extends Component {
             <SideNav />
           </SideBar>
         </SideBarWrapper>
-        <LendingHealthCard>
-          <h1>oooooo aaaaah</h1>
-        </LendingHealthCard>
+        <LendingHealthCard />
       </Layout>
     )
   }
