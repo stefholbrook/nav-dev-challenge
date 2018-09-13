@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import debounce from 'lodash/debounce'
 
 import StatusCard from './status-card'
+import TabMenu from './tab-menu'
 
 export const StyledCard = styled.div`
   position: relative;
@@ -75,7 +76,10 @@ export const CardBody = styled.div`
 class LendingHealthCard extends Component {
   constructor () {
     super()
-    this.state = { contentHeight: 0 }
+    this.state = {
+      contentHeight: 0,
+      currentView: 'creditCard'
+    }
 
     this.setHeight = this.setHeight.bind(this)
   }
@@ -94,14 +98,14 @@ setHeight = debounce(
   )
 
   render () {
-    const { contentHeight } = this.state
+    const { contentHeight, currentView } = this.state
 
     return (
       <StyledCard>
         <HeightController setHeight={contentHeight}>
           <CardBody ref={this.setRef('contents')}>
             <Grid>
-            {/* <TabMenu currentView={currentView} tabClick={this.tabClick} /> */}
+            <TabMenu currentView={currentView} tabClick={this.tabClick} />
             {/* {
               !isLoading &&
               !isIdVerified && (
