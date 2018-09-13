@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import debounce from 'lodash/debounce'
 
 import ActionRequiredCard from './action-required-card'
+import requirements from '../data.json'
+import Requirement from './requirement'
 import StatusCard from './status-card'
 import TabMenu from './tab-menu'
 
@@ -16,7 +18,7 @@ export const StyledCard = styled.div`
   box-shadow: 0 0 3px 0 #D0D2D6, 0 1px 2px 0 #D0D2D6;
 `
 
-const Header = styled.h1`
+const Header = styled.h3`
   font-family: Averta, Helvetica, sans-serif;
   margin-top: 0;
   margin-bottom: 0;
@@ -34,13 +36,13 @@ const Grid = styled.section`
   & > ${StatusCard}, & > ${Header} {
     margin: 8px 0;
   }
+
   ${'' /* & > ${Requirement} {
     margin-top: 8px;
   } */}
 `
 
-
-export const HeightController = styled.div`
+const HeightController = styled.div`
   ${({setHeight}) => setHeight ? `height: ${setHeight}px` : ''};
   overflow-x: hidden;
   overflow-y: visible;
@@ -111,37 +113,16 @@ class LendingHealthCard extends Component {
             {currentView === 'termLoan' && (
               <ActionRequiredCard />
             )}
-            {/* {
-              !isLoading &&
-              !activeBusinessId &&
-              currentView === 'lineOfCredit' && (
-                <ActionRequiredCard
-                  type='addBusiness'
-                  copy='For line of credit options, add your business' />
-              )
-            } */}
             {currentView === 'creditCard' && (
                 <Fragment>
                   <StatusCard />
-                  {/* <Header size='md'>Here’s what issuers are looking for</Header> */}
-                  {/* {requirements.map((requirement, index) => (
+                  <Header>Here’s what issuers are looking for</Header>
+                  {requirements.map((requirement, index) => (
                     <Requirement
                       key={index}
-                      title={requirement.label}
-                      worstValue={requirement.worstValue}
-                      bestValue={requirement.bestValue}
-                      targetValue={requirement.targetValue}
-                      currentValue={requirement.currentValue}
-                      valuePrefix={requirement.valuePrefix}
-                      valueSuffix={requirement.valueSuffix}
-                      failCopy={requirement.failureCopy}
-                      canAddInfo={['annualRevenue', 'timeInBusiness'].includes(requirement.type)}
-                      missingInfoOnClick={this.missingInfoOnClick(
-                        requirement.type,
-                        requirement.label
-                      )}
-                    />
-                  ))} */}
+                      title={requirement.title}
+                      value={requirement.value} />
+                  ))}
                 </Fragment>
             )
             }

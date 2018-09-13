@@ -93,8 +93,6 @@ export const Plus = styled.span`
 
 export class ActionRequiredCard extends Component {
   render () {
-    // const info = select(type)(cardInfo)
-
     return (
       <StyledCard>
         <SmallBizIcon />
