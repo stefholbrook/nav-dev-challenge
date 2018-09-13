@@ -25,6 +25,7 @@ const Nav = styled.nav`
 
 const List = styled.ul`
   padding: 0;
+  list-style: none;
 `
 
 const Icon = styled.i`
@@ -39,6 +40,7 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 18px;
   color: #444751;
   border-left: 4px solid #fff;
+  text-decoration: none;
 
   &.is-active,
   &:active,
