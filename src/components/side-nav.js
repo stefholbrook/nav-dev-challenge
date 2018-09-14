@@ -52,7 +52,7 @@ export const StyledNavLink = styled(NavLink)`
 `
 
 export const isActive = (match, { pathname = '' } = {}) => {
-  pathname.includes('/instructions')
+  return pathname.includes('/instructions')
 }
 
 export const SideNav = ({ isPremium }) => (
