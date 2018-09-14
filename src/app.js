@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 import styled from 'styled-components'
 
 import LendingHealthCard from './components/lending-health-card'
+import Routes from './routes'
 import SideNav from './components/side-nav'
 
 export const Layout = styled.div`
@@ -35,14 +37,16 @@ const SideBar = styled(Aside)`
 class App extends Component {
   render () {
     return (
-      <Layout>
-        <SideBarWrapper>
-          <SideBar>
-            <SideNav />
-          </SideBar>
-        </SideBarWrapper>
-        <LendingHealthCard />
-      </Layout>
+      <Router>
+        <Layout>
+          <SideBarWrapper>
+            <SideBar>
+              <SideNav />
+            </SideBar>
+          </SideBarWrapper>
+          <Routes />
+        </Layout>
+      </Router>
     )
   }
 }

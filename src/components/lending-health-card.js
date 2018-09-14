@@ -37,10 +37,6 @@ const Grid = styled.section`
   & > ${StatusCard}, & > ${Header} {
     margin: 16px 0;
   }
-
-  ${'' /* & > ${Requirement} {
-    margin-top: 8px;
-  } */}
 `
 
 const HeightController = styled.div`

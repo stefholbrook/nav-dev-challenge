@@ -68,7 +68,7 @@ export const SideNav = ({ isPremium }) => (
         <li>
           <StyledNavLink
             activeClassName='is-active'
-            to={''}
+            to={'/instructions'}
             isActive={isActive}
           >
             <Icon>
@@ -80,7 +80,7 @@ export const SideNav = ({ isPremium }) => (
         <li>
           <StyledNavLink
             activeClassName='is-active'
-            to=''
+            to='/lesson'
           >
             <Icon>
               🤓
