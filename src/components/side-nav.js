@@ -51,8 +51,9 @@ export const StyledNavLink = styled(NavLink)`
   }
 `
 
-export const isActive = (match, { pathname = '' } = {}) =>
-  pathname.includes('/partner/reports')
+export const isActive = (match, { pathname = '' } = {}) => {
+  pathname.includes('/instructions')
+}
 
 export const SideNav = ({ isPremium }) => (
   <Wrapper>
