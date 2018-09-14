@@ -77,8 +77,8 @@ export const Plus = styled.span`
   &::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -3px;
+    left: -2px;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -98,7 +98,7 @@ export class ActionRequiredCard extends Component {
         <SmallBizIcon />
         <Header size='sm'>Add your business</Header>
         <Copy>For term loan options, add your business</Copy>
-        <Plus /> Add
+        <Plus /> <Copy>Add</Copy>
       </StyledCard>
     )
   }
