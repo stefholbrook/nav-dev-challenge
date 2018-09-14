@@ -59,13 +59,12 @@ const Instructions = () => {
 
         <ul>
           <li>
-            On the next page, you'll see an example of 3 interactive blocks.
-            Choose the block that catches your eye most and build your own
-            version of it.
+            On the next page, you'll see an example of an interactive card.
+            Build your own version of it.
           </li>
           <li>
             Feel free to stick to the visual styles we have in place or get
-            creative and add your own flair 🔥🔥. It important that you implement
+            creative and add your own flair 🔥🔥. It's important that you implement
             the feature in full, so pay close attention to the details.
           </li>
           <li>
@@ -82,7 +81,7 @@ const Instructions = () => {
       <Header>Part 2: Discuss with Team</Header>
       <Copy>
         You will discuss your code and explain your decisions to a small group of
-        developers and stakeholders at Articulate. The format is modeled after
+        developers and stakeholders at Nav. The format is modeled after
         the way we conduct pairing sessions and is meant to give you a glimpse
         into the way we work. We are SUPER friendly and it will be a fun
         conversation.
