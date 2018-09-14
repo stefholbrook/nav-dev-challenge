@@ -8,6 +8,7 @@ import App from './app'
 injectGlobal`
   body {
     background-color: #eef2f5;
+    margin: 0;
   }
 `
 

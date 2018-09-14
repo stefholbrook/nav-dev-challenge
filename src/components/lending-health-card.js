@@ -16,6 +16,7 @@ export const StyledCard = styled.div`
   background-color: #fff;
   overflow: Hidden;
   box-shadow: 0 0 3px 0 #D0D2D6, 0 1px 2px 0 #D0D2D6;
+  margin-top: 42px;
 `
 
 const Header = styled.h3`
@@ -34,7 +35,7 @@ const Grid = styled.section`
   width: 100%;
 
   & > ${StatusCard}, & > ${Header} {
-    margin: 8px 0;
+    margin: 16px 0;
   }
 
   ${'' /* & > ${Requirement} {

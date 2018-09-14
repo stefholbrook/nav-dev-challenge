@@ -16,8 +16,7 @@ export const Layout = styled.div`
 
 export const Aside = styled.aside`
   height: 100%;
-  width: 328px;
-  padding: 42px;
+  padding: 52px;
   background-color: #fff;
   flex-shrink: 0;
   overflow: auto;
